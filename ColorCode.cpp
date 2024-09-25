@@ -1,5 +1,5 @@
 // ColorCoder.cpp
-#include "ColorCoder.h"
+#include "ColorCode.h"
 #include <iostream>
 
 namespace TelCoColorCoder 
