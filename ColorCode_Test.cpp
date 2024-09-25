@@ -1,5 +1,5 @@
 // TestColorCoder.cpp
-#include "ColorCoder.h"
+#include "ColorCode.h"
 #include <iostream>
 #include <assert.h>
 
