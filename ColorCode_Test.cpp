@@ -20,7 +20,7 @@ void testManualGeneration() {
         "Black Blue", "Black Orange", "Black Green", "Black Brown", "Black Slate", "Yellow Blue", "Yellow Orange", "Yellow Green", "Yellow Brown", "Yellow Slate",
         "Violet Blue", "Violet Orange", "Violet Green", "Violet Brown", "Violet Slate"
     };
-    for (int i = 0; i < 25; ++i) expectedManual << i + 1 << ": " << expectedEntries[i] << "\n";
+    for (int Char = 0; Char < 25; ++Char) expectedManual << Char + 1 << ": " << expectedEntries[Char] << "\n";
     assert(manual == expectedManual.str());
 }
 
