@@ -1,33 +1,34 @@
-// ColorCoder.cpp
 #include "ColorCode.h"
 #include <iostream>
+#include <sstream> // for std::ostringstream
 
 namespace ColorCoder 
 {
     const char* MajorColorNames[] = {
         "White", "Red", "Black", "Yellow", "Violet"
     };
-    int numberOfMajorColors =
+    const int numberOfMajorColors =
         sizeof(MajorColorNames) / sizeof(MajorColorNames[0]);
+    
     const char* MinorColorNames[] = {
         "Blue", "Orange", "Green", "Brown", "Slate"
     };
-    int numberOfMinorColors =
+    const int numberOfMinorColors =
         sizeof(MinorColorNames) / sizeof(MinorColorNames[0]);
 
     ColorPair::ColorPair(MajorColor major, MinorColor minor):
         majorColor(major), minorColor(minor)
     {}
 
-    MajorColor ColorPair::getMajor() {
+    MajorColor ColorPair::getMajor() const {
         return majorColor;
     }
 
-    MinorColor ColorPair::getMinor() {
+    MinorColor ColorPair::getMinor() const {
         return minorColor;
     }
 
-    std::string ColorPair::ToString() {
+    std::string ColorPair::ToString() const {
         std::string colorPairStr = MajorColorNames[majorColor];
         colorPairStr += " ";
         colorPairStr += MinorColorNames[minorColor];
@@ -45,5 +46,15 @@ namespace ColorCoder
 
     int GetPairNumberFromColor(MajorColor major, MinorColor minor) {
         return major * numberOfMinorColors + minor + 1;
+    }
+
+    // Function to generate the reference manual as a string
+    std::string GenerateReferenceManual() {
+        std::ostringstream manual;
+        for (int pairNumber = 1; pairNumber <= 25; ++pairNumber) {
+            ColorPair colorPair = GetColorFromPairNumber(pairNumber);
+            manual << pairNumber << ": " << colorPair.ToString() << "\n";
+        }
+        return manual.str();
     }
 }
