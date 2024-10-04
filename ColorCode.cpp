@@ -1,6 +1,6 @@
 #include "ColorCode.h"
 #include <iostream>
-#include <sstream> // for std::ostringstream
+#include <sstream> 
 
 namespace TelCoColorCoder 
 {
